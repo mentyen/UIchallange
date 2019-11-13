@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Suite for Translator" verbose="10">
+	<test name="Tests">
+		<!-- Enter group name to execute specific set of tests -->
+		<groups>
+			
+		</groups>
+		<!-- List individual packages to execute below -->
+		<packages>
+			<package name="com.sample.test.demo.tests.*" />
+		</packages>
+	</test>
+</suite>
+

@@ -1,0 +1,22 @@
+LOCATORS
+
+pizza1            ID        "pizza1Pizza"
+pizza1Toppings1   xpath     "//div[@id='pizza1']//select[@class='toppings1']"
+pizza1Toppings1   xpath     "//div[@id='pizza1']//select[@class='toppings2']"
+pizza1Quantity    ID        "pizza1Qty"
+pizza1Cost        ID        "pizza1Cost"
+
+radioCreditCard   ID        "ccpayment"
+radioCash         ID        "cashpayment"
+
+email             ID        "email"
+name              ID        "name"
+phone             ID        "phone"
+    
+placeOrderButton  ID        "placeOrder"
+resetButton       ID        "reset"
+
+dialog            ID        "dialog"
+dialogText        xpath     "//div[@id='dialog']/p")          
+
+

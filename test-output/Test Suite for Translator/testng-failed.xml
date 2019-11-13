@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [Test Suite for Translator]">
+  <test thread-count="5" verbose="10" name="Tests(failed)">
+    <classes>
+      <class name="com.sample.test.demo.tests.TC_02_ValidatingOrderCostFunctionality">
+        <methods>
+          <include name="init"/>
+          <include name="validatingOrderCostFunctionality"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.sample.test.demo.tests.TC_02_ValidatingOrderCostFunctionality -->
+      <class name="com.sample.test.demo.tests.TC_03_ValidatingPaymentFunctionality">
+        <methods>
+          <include name="validatingPaymentFunctionality"/>
+          <include name="init"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.sample.test.demo.tests.TC_03_ValidatingPaymentFunctionality -->
+    </classes>
+  </test> <!-- Tests(failed) -->
+</suite> <!-- Failed suite [Test Suite for Translator] -->
