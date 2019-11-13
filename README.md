@@ -11,5 +11,8 @@
 
 #### Test Cases
 
- 1.  
+1. TC_01 HappyPath
+2. TC_02 ValidatingQuantityFunctionality(Adding negative order quantity-->Order should not be placed-->Negative total balance should not be showing in a popUp windows)
+3. TC_03 ValidatingPaymentInformation (Do not choose any of the payments -->Order should not be placed)
+4. TC_04 ValidatingPickUpInformation (Do not choose a required PickUp Information --> Order should not be placed-->PopUp windows should appier)
 
