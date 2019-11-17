@@ -3,13 +3,22 @@
 <suite guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [Test Suite for Translator]">
   <test thread-count="5" verbose="10" name="Tests(failed)">
     <classes>
-      <class name="com.sample.test.demo.tests.TC_02_ValidatingOrderCostFunctionality">
+      <class name="com.sample.test.demo.tests.TC_01_HappyPath">
+        <methods>
+          <include name="setUp"/>
+          <include name="init"/>
+          <include name="tearDown"/>
+          <include name="validatingOrderCostFunctionality"/>
+          <include name="happyPath"/>
+        </methods>
+      </class> <!-- com.sample.test.demo.tests.TC_01_HappyPath -->
+      <class name="com.sample.test.demo.tests.DemoTest">
         <methods>
           <include name="init"/>
-          <include name="validatingOrderCostFunctionality"/>
           <include name="tearDown"/>
+          <include name="demoTest"/>
         </methods>
-      </class> <!-- com.sample.test.demo.tests.TC_02_ValidatingOrderCostFunctionality -->
+      </class> <!-- com.sample.test.demo.tests.DemoTest -->
       <class name="com.sample.test.demo.tests.TC_03_ValidatingPaymentFunctionality">
         <methods>
           <include name="validatingPaymentFunctionality"/>
@@ -17,6 +26,12 @@
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.sample.test.demo.tests.TC_03_ValidatingPaymentFunctionality -->
+      <class name="com.sample.test.demo.tests.TC_02_ValidatingOrderCostFunctionality">
+        <methods>
+          <include name="setUp"/>
+          <include name="validatingOrderCostFunctionality"/>
+        </methods>
+      </class> <!-- com.sample.test.demo.tests.TC_02_ValidatingOrderCostFunctionality -->
     </classes>
   </test> <!-- Tests(failed) -->
 </suite> <!-- Failed suite [Test Suite for Translator] -->

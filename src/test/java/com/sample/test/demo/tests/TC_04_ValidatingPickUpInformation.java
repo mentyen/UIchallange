@@ -1,5 +1,7 @@
 package com.sample.test.demo.tests;
 
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.sample.test.demo.TestBase;
@@ -7,103 +9,137 @@ import com.sample.test.demo.constants.PizzaToppings;
 import com.sample.test.demo.constants.PizzaTypes;
 import com.sample.test.pages.OrderPage;
 
-import junit.framework.Assert;
+import org.testng.Assert;
 
-public class TC_04_ValidatingPickUpInformation extends TestBase {
+public class TC_04_ValidatingPickUpInformation extends OrderPage {
 
-	@Test
-	public void  missingPhoneNumber() {
+	public static PizzaTypes pizza;
+	public static PizzaToppings topping1;
+	public static PizzaToppings topping2;
+	public static OrderPage orderPage;
+	public static TC_04_ValidatingPickUpInformation tc_04_objvalidatingPickUpFunctionality;
+	public static String pizzaQuantity;
 
-		OrderPage orderPage = new OrderPage();
+	@BeforeClass
+	public void setUp() {
 
-		PizzaTypes pizza = PizzaTypes.SMALL_NOTOPPINGS;
+		tc_04_objvalidatingPickUpFunctionality = new TC_04_ValidatingPickUpInformation();
 
-		//PizzaToppings toppings = PizzaToppings.ITALIANHAM;
-		
+		orderPage = new OrderPage();
 
-		driver.findElement(orderPage.getResetButton()).click();
+		pizza = PizzaTypes.LARGE_TWOTOPPINGS;
 
-		selectValueFromDD(driver.findElement(orderPage.getPizza1()), pizza.getDisplayName());
+		topping1 = PizzaToppings.ONIONS;
 
-		//selectValueFromDD(driver.findElement(orderPage.getPizza1Toppings1()), toppings.getDisplayName());
-		
+		topping2 = PizzaToppings.PROVOLNE;
 
-		String num = getRandomNumber();
-
-		Assert.assertTrue("Quantity shoud be greater then 0", Integer.parseInt(num) > 0);
-
-		sendKey(driver.findElement(orderPage.getPizzaQantity()), num);
-		
-
-		String name = getRandomName();
-
-		Assert.assertTrue("UserName should not be null", !name.isEmpty());
-
-		sendKey(driver.findElement(orderPage.getName()), name);
-		
-		//phone number does not get entered in to expected field
-		
-		sendKey(driver.findElement(orderPage.getEmail()), getRandomEmail());		
-
-		radioButtonClick(driver.findElement(orderPage.getRadioCheckCard()));		
-
-		driver.findElement(orderPage.getPlaceOrderButton()).click();
-		
-
-		String actual = driver.findElement(orderPage.getDialogText()).getText();
-
-		String expected = "Missing phone number";
-
-		Assert.assertEquals(expected, actual);
+		pizzaQuantity = "5";
 
 	}
-	
+
 	@Test
-	public void missingUserName() {
+	public void TC_04_ValidatingPickUpInformationByNotProvidingPhoneNumber() {
 
-		OrderPage orderPage = new OrderPage();
+		tc_04_objvalidatingPickUpFunctionality.selectPizza();
 
-		PizzaTypes pizza = PizzaTypes.SMALL_ONETOPPINGS;
+		tc_04_objvalidatingPickUpFunctionality.selectToppings1(topping1.getDisplayName());
 
-		PizzaToppings toppings = PizzaToppings.EXTRACHEESE;
-		
+		tc_04_objvalidatingPickUpFunctionality.selectToppings2(topping2.getDisplayName());
+
+		tc_04_objvalidatingPickUpFunctionality.selectPizzaQuantity();
+
+		tc_04_objvalidatingPickUpFunctionality.inputUserName();
+
+		tc_04_objvalidatingPickUpFunctionality.inputUserEmail();
+
+		tc_04_objvalidatingPickUpFunctionality.plaseOrder();
+
+		Assert.assertEquals(tc_04_objvalidatingPickUpFunctionality.actualResult(), "Missing phone number");
+
+	}
+
+	@Test
+	public void TC_04_ValidatingPickUpInformationByNotProvidingUserName() {
+
+		tc_04_objvalidatingPickUpFunctionality.selectPizza();
+
+		tc_04_objvalidatingPickUpFunctionality.selectToppings1(topping1.getDisplayName());
+
+		tc_04_objvalidatingPickUpFunctionality.selectToppings2(topping2.getDisplayName());
+
+		tc_04_objvalidatingPickUpFunctionality.selectPizzaQuantity();
+
+		tc_04_objvalidatingPickUpFunctionality.inputUserPfoneNumber();
+
+		tc_04_objvalidatingPickUpFunctionality.inputUserEmail();
+
+		tc_04_objvalidatingPickUpFunctionality.plaseOrder();
+
+		Assert.assertEquals(tc_04_objvalidatingPickUpFunctionality.actualResult(), "Missing name");
+
+	}
+
+	public void selectPizza() {
 
 		driver.findElement(orderPage.getResetButton()).click();
 
 		selectValueFromDD(driver.findElement(orderPage.getPizza1()), pizza.getDisplayName());
+	}
 
-		selectValueFromDD(driver.findElement(orderPage.getPizza1Toppings1()), toppings.getDisplayName());
-		
+	public void selectToppings1(String toppingsName) {
 
-		String num = getRandomNumber();
+		selectValueFromDD(driver.findElement(orderPage.getPizza1Toppings1()), toppingsName);
+	}
 
-		Assert.assertTrue("Quantity shoud be greater then 0", Integer.parseInt(num) > 0);
+	public void selectToppings2(String toppingsName) {
 
-		sendKey(driver.findElement(orderPage.getPizzaQantity()), num);
-		
-	    //userName does not get entered in to expected field
-					
-		sendKey(driver.findElement(orderPage.getEmail()), getRandomEmail());	
-		
-		
-        String phoneNumber=getRandomPhoneNumber();
-		
-		Assert.assertTrue("PfoneNumber should not be null",!phoneNumber.isEmpty());
-				
-		sendKey(driver.findElement(orderPage.getPhone()),getRandomPhoneNumber());	
-		
+		selectValueFromDD(driver.findElement(orderPage.getPizza1Toppings2()), toppingsName);
+	}
 
-		radioButtonClick(driver.findElement(orderPage.getRadioCheckCard()));		
+	public void selectPizzaQuantity() {
+
+		sendKey(driver.findElement(orderPage.getPizzaQantity()), pizzaQuantity);
+	}
+
+	public void inputUserName() {
+
+		sendKey(driver.findElement(orderPage.getName()), getRandomName());
+	}
+
+	public void inputUserEmail() {
+
+		sendKey(driver.findElement(orderPage.getEmail()), getRandomEmail());
+
+	}
+
+	public void inputUserPfoneNumber() {
+
+		sendKey(driver.findElement(orderPage.getPhone()), getRandomPhoneNumber());
+	}
+
+	public void selectPayment() {
+
+		radioButtonClick(driver.findElement(orderPage.getRadioCheckCard()));
+
+	}
+
+	public void plaseOrder() {
 
 		driver.findElement(orderPage.getPlaceOrderButton()).click();
-		
 
-		String actual = driver.findElement(orderPage.getDialogText()).getText();
+	}
 
-		String expected = "Missing name";
+	public String expectedResult() {
 
-		Assert.assertEquals(expected, actual);
+		String expectedOrderResult = "Thank you for your order! TOTAL: "
+				+ getOrderPrice(Integer.parseInt(pizzaQuantity) * pizza.getCost()) + " " + pizza.getDisplayName();
 
+		return expectedOrderResult;
+	}
+
+	public String actualResult() {
+
+		return driver.findElement(orderPage.getDialogText()).getText();
 	}
 
 }

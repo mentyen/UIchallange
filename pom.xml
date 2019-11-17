@@ -7,6 +7,7 @@
 	<groupId>demo</groupId>
 	<artifactId>com.sample</artifactId>
 	<version>1.0-SNAPSHOT</version>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -55,20 +56,15 @@
 			<artifactId>maven-surefire-plugin</artifactId>
 			<version>3.0.0-M3</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+
+		<!-- RandomString -->
 		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.9</version>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
 		</dependency>
 
 
-		<!--log4j -->
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
-		</dependency>
+
 	</dependencies>
-
 </project>

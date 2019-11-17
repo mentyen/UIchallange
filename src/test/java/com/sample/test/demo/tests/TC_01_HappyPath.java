@@ -1,6 +1,9 @@
 package com.sample.test.demo.tests;
 
-import org.openqa.selenium.support.ui.Select;
+
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.sample.test.demo.TestBase;
@@ -8,69 +11,109 @@ import com.sample.test.demo.constants.PizzaToppings;
 import com.sample.test.demo.constants.PizzaTypes;
 import com.sample.test.pages.OrderPage;
 
-import junit.framework.Assert;
 
-public class TC_01_HappyPath extends TestBase{
+
+public class TC_01_HappyPath extends OrderPage{
 	
-	//If Business requirements needs to automate all of the pizza variations it could be done in different classes and group in smoke
+	public static PizzaTypes pizza;
+	public static PizzaToppings toppings;
+	public static OrderPage orderPage;
+	public static TC_01_HappyPath happyPath;
+	public static String pizzaQuantity;
+	
+	@BeforeMethod
+	public void setUp() {
+		
+		happyPath=new TC_01_HappyPath();
+		
+		orderPage=new OrderPage();
+		
+		pizza=PizzaTypes.SMALL_ONETOPPINGS;
+		
+		toppings=PizzaToppings.EXTRACHEESE;
+		
+		pizzaQuantity="4";
+		
+	}
+
 	
 	@Test
 	public void happyPath() {
+    
+		happyPath.selectPizza();
 		
-		OrderPage orderPage=new OrderPage();
+		happyPath.selectToppings();
 		
-		PizzaTypes pizza=PizzaTypes.SMALL_ONETOPPINGS;
+		happyPath.selectPizzaQuantity();
 		
-		PizzaToppings toppings=PizzaToppings.EXTRACHEESE;
+		happyPath.inputUserName();
 		
+		happyPath.inputUserEmail();
 		
-		driver.findElement(orderPage.getResetButton()).click();
+		happyPath.inputUserPfoneNumber();
 		
-		selectValueFromDD(driver.findElement(orderPage.getPizza1()),pizza.getDisplayName());		
+		happyPath.selectPayment();
 		
-		selectValueFromDD(driver.findElement(orderPage.getPizza1Toppings1()),toppings.getDisplayName());		
+		happyPath.plaseOrder();
+						
+		Assert.assertEquals(happyPath.expectedResult(), happyPath.actualResult());
 		
-			
-		String num=getRandomNumber();
+	}
+	
+	
+	public void selectPizza() {
 		
-		Assert.assertTrue("Quantity shoud be greater then 0", Integer.parseInt(num)>0);
+		selectValueFromDD(driver.findElement(orderPage.getPizza1()),pizza.getDisplayName());	
+	}
+	
+	public void selectToppings() {
 		
-		sendKey(driver.findElement(orderPage.getPizzaQantity()),num);
-		
-		
-		String name=getRandomName();
-		
-		Assert.assertTrue("UserName should not be null", !name.isEmpty());
-		
-		sendKey(driver.findElement(orderPage.getName()),name);
-		
+		selectValueFromDD(driver.findElement(orderPage.getPizza1Toppings1()),toppings.getDisplayName());
+	}
+	
+	public void selectPizzaQuantity() {
 				
+		sendKey(driver.findElement(orderPage.getPizzaQantity()),pizzaQuantity);
+	}
+	
+	public void inputUserName() {
+		
+		sendKey(driver.findElement(orderPage.getName()),getRandomName());
+	}
+	
+	public void inputUserEmail() {
+		
 		sendKey(driver.findElement(orderPage.getEmail()),getRandomEmail());
 		
+	}
+	
+	public void inputUserPfoneNumber() {
 		
-		String phoneNumber=getRandomPhoneNumber();
-		
-		Assert.assertTrue("PfoneNumber should not be null",!phoneNumber.isEmpty());
-				
-		sendKey(driver.findElement(orderPage.getPhone()),getRandomPhoneNumber());	
-		
-		
+		sendKey(driver.findElement(orderPage.getPhone()),getRandomPhoneNumber());
+	}
+	
+	public void selectPayment() {
+
 		radioButtonClick(driver.findElement(orderPage.getRadioCheckCard()));
-				
-		boolean flag=getPaymentOptionInformation(driver.findElement(orderPage.getRadioCheckCard()),driver.findElement(orderPage.getRadioCash()));
-				
-		Assert.assertTrue("One of the payment method needs to be selected", flag);
 		
+	}
+	
+	public void plaseOrder() {
 		
 		driver.findElement(orderPage.getPlaceOrderButton()).click();
-					
-		String actual=driver.findElement(orderPage.getDialogText()).getText();
-						
-		String expected="Thank you for your order! TOTAL: "+getOrderPrice(Integer.parseInt(num)*pizza.getCost())+" "+pizza.getDisplayName();
 		
-		Assert.assertEquals(expected, actual);
-			
+	}
+	
+	public String expectedResult() {
 		
+		String expectedOrderResult="Thank you for your order! TOTAL: "+getOrderPrice(Integer.parseInt(pizzaQuantity)*pizza.getCost())+" "+pizza.getDisplayName();
+		
+		return expectedOrderResult;
+	}
+	
+	public String actualResult() {
+		
+		return driver.findElement(orderPage.getDialogText()).getText();
 	}
 
 }

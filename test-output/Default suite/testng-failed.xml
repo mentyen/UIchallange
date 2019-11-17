@@ -5,9 +5,11 @@
     <classes>
       <class name="com.sample.test.demo.tests.TC_03_ValidatingPaymentFunctionality">
         <methods>
-          <include name="validatingPaymentFunctionality"/>
           <include name="init"/>
+          <include name="TC_03_ValidatingPaymentFunctionalityBySelectingBothPayments"/>
           <include name="tearDown"/>
+          <include name="TC_03_ValidatingPaymentFunctionalityByNotSelectingAnyOfThePayments"/>
+          <include name="start"/>
         </methods>
       </class> <!-- com.sample.test.demo.tests.TC_03_ValidatingPaymentFunctionality -->
     </classes>

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang.RandomStringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,7 +17,7 @@ import org.testng.annotations.BeforeClass;
 public class TestBase {
 
 	private Configuration config;
-	protected WebDriver driver;
+	protected static WebDriver driver;
 	protected String url;
 
 	@BeforeClass(alwaysRun = true)
@@ -29,9 +29,7 @@ public class TestBase {
 	}
 
 	private void navigateToSite() {
-		driver.manage().window().fullscreen();
-		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
 		driver.get(url);
 	}
 
@@ -58,33 +56,33 @@ public class TestBase {
 		}
 
 	}
-	
+
 	public static void sendKey(WebElement element, String key) {
-		
+
 		element.clear();
 		element.sendKeys(key);
 	}
-	
+
 	public static void radioButtonClick(WebElement element) {
-		
-		if(!element.isSelected()) {
+
+		if (!element.isSelected()) {
 			element.click();
-		}else {
+		} else {
 			System.out.println("Button is already selected");
 		}
 	}
-	
+
 	public static void selectValueFromDD(WebElement element, String text) {
-		
+
 		Select select = new Select(element);
 		List<WebElement> options = select.getOptions();
 		boolean isSelected = false;
-		
+
 		for (WebElement option : options) {
 			String optionText = option.getAttribute("value").toString();
 			if (optionText.equals(text)) {
 				select.selectByValue(text);
-				System.out.println("Option with text " + text + " is selected");
+				//System.out.println("Option with text " + text + " is selected");
 				isSelected = true;
 				break;
 			}
@@ -93,71 +91,56 @@ public class TestBase {
 			System.out.println("Option with text +" + text + "is not available");
 		}
 	}
-	
+
 	public static String getRandomName() {
 
 		String generatedString = RandomStringUtils.randomAlphabetic(1);
 
-		return ("John" + generatedString + "White "+generatedString);
+		return ("John" + generatedString + "  White " + generatedString);
 	}
-	
+
 	public static String getRandomEmail() {
 
 		String generatedString = RandomStringUtils.randomAlphabetic(6);
 
-		return (generatedString+"@gmail.com");
+		return (generatedString + "@gmail.com");
 	}
-	
+
 	public static String getRandomPhoneNumber() {
 
 		String generatedString = RandomStringUtils.randomNumeric(4);
 
-		return ("440-570-"+generatedString);
+		return ("440-570-" + generatedString);
 	}
-	
-	public static String getRandomNumber() {
 
-		String generatedString = RandomStringUtils.randomNumeric(1);
-
-		return (generatedString);
-	}
-	
 	public static String getOrderPrice(double actualPrice) {
-		
-		double price=actualPrice;
-		int intPart=(int)actualPrice;
-		double decimalPart=actualPrice-intPart;
-		
-		if(decimalPart==0.0) {
+
+		double price = actualPrice;
+		int intPart = (int) actualPrice;
+		double decimalPart = actualPrice - intPart;
+
+		if (decimalPart == 0.0) {
 			return Integer.toString(intPart);
-			
-		}else {
+
+		} else {
 			return Double.toString(price);
 		}
-		
+
 	}
-	
-	public static String getNegativeRandomNumber() {
-	    
-	    Random random = new Random(); 
-	    int rand = random.nextInt(3) * (random .nextBoolean() ? -1 : -2);
-	   
-	    return Integer.toString(rand);
-	    
-	}
-	
-	public static boolean getPaymentOptionInformation(WebElement card,WebElement cash) {
-		
-		boolean creditCardiSSelected = card.isSelected();
 
-		boolean cashIsSelected = cash.isSelected();
+	public static boolean isPaymentSelected(WebElement card, WebElement cash) {
 
-		boolean flag = true;
+		boolean iscreditCardiSSelected = card.isSelected();
 
-		if (creditCardiSSelected == false && cashIsSelected == false) {
-			flag = false;
-		};
-		return flag;
+		boolean iscashIsSelected = cash.isSelected();
+
+		boolean isPaymentSelected = true;
+
+		if (iscreditCardiSSelected == false && iscashIsSelected == false) {
+			isPaymentSelected = false;
+		}
+		;
+		return isPaymentSelected;
 	}
 
 }

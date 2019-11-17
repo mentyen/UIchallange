@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test Suite for Translator" verbose="10">
+<suite name="testng" verbose="10">
 	<test name="Tests">
 		<!-- Enter group name to execute specific set of tests -->
 		<groups>
