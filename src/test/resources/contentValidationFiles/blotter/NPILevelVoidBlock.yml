@@ -1,0 +1,205 @@
+content:
+  element1:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/B[1]"
+    content: "Payer/Patient:"
+  element2:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/B[1]"
+    content: "${payer}"
+  element3:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/B[1]"
+    content: "NPI:"
+  element4:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/B[1]"
+    content: "${npi}"
+  element5:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[3]/TD[1]"
+    content: "Active Bank Information"
+  element6:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[5]/TD[1]"
+    content: "Bank Name:"
+  element7:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[5]/TD[2]"
+    content: "${bnk_nm_act}"
+  element8:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[6]/TD[1]"
+    content: "Bank Address:"
+  element9:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[6]/TD[2]"
+    content: "${adr_txt_act}"
+  element10:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[7]/TD[2]"
+    content: "${cty_st_zip_act}"
+  element11:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[8]/TD[1]"
+    content: "Phone Number:"
+  element13:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[5]/TD[3]"
+    content: "Routing Transit Number:"
+  element14:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[5]/TD[4]"
+    content: "${rte_trns_nbr_act}"
+  element15:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[6]/TD[3]"
+    content: "Account Number:"
+  element16:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[6]/TD[4]"
+    content: "${bnk_acct_nbr_act}"
+  element17:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[7]/TD[3]"
+    content: "Account Type:"
+  element18:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[7]/TD[4]"
+    content: "Checking"
+  element19:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[8]/TD[3]"
+    content: "ACH Addenda Record Type:"
+  element20:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[8]/TD[4]"
+    content: "CCD"
+  element21:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[9]/TD[3]"
+    content: "    Bank Letter:"
+  element22:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[13]/TD[2]"
+    content: "Pending Bank Information"
+  element23:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[15]/TD[1]"
+    content: "Bank Name:"
+  element24:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[15]/TD[2]"
+    content: "${bnk_nm_pending}"
+  element25:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[16]/TD[1]"
+    content: "Bank Address:"
+  element26:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[16]/TD[2]"
+    content: "${adr_txt_pending}"
+  element28:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[18]/TD[1]"
+    content: "Phone Number:"
+  element30:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[20]/TD[1]"
+    content: "Change Initiated By:"
+  element31:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[21]/TD[1]"
+    content: "Change Date:"
+  element32:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[21]/TD[2]"
+    content: "${change_date}"
+  element33:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[22]/TD[1]"
+    content: "User Name:"
+  element34:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[23]/TD[1]"
+    content: "Contact Name:"
+  element35:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[23]/TD[2]"
+    content: "${first_last}"
+  element36:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[24]/TD[1]"
+    content: "Title:"
+  element37:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[24]/TD[2]"
+    content: "${title}"
+  element38:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[25]/TD[1]"
+    content: "Email Address:"
+  element39:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[25]/TD[2]"
+    content: "${email}"
+  element40:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[26]/TD[1]"
+    content: "Phone Number:"
+  element41:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[26]/TD[2]"
+    content: "${phone}"
+  element42:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[15]/TD[3]"
+    content: "Routing Transit Number:"
+  element43:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[16]/TD[3]"
+    content: "Account Number:"
+  element44:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[17]/TD[3]"
+    content: "Account Type:"
+  element45:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[18]/TD[3]"
+    content: "ACH Addenda Record Type:"
+  element46:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[19]/TD[3]"
+    content: "Voided Check:"
+  element47:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[20]/TD[3]"
+    content: "W9:"
+  element48:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[21]/TD[3]"
+    content: "Acknowledgement Status:"
+  element49:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[22]/TD[3]"
+    content: "Acknowledgement Status Date:"
+  element50:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[24]/TD[3]"
+    content: "Acknowledged By:"
+  element51:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[25]/TD[3]"
+    content: "User Name:"
+  element52:
+    description: ""
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[26]/TD[3]"
+    content: "Contact Name:"
+  element53:
+    description: "Routing Transit Number: pending "
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[15]/TD[4]"
+    content: "${rtn_pending}"
+  element54:
+    description: "Account Number: pending "
+    xpath: "id('npiLevelInfoMsgBlock')/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[16]/TD[4]"
+    content: "${acc_num_pending}"

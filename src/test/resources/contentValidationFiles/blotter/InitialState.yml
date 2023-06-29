@@ -1,0 +1,29 @@
+content:
+  element1: 
+    description: ""
+    xpath: "id('EFTERAregForm')/SECTION[1]/MAIN[1]/P[2]"
+    content: "According to our records, the TIN you entered was issued a check payment by UnitedHealthcare or an affiliate\nwithin the past 60 days. Please provide additional information so we can expedite the processing of your\nenrollment application if a data match is found."
+  element2: 
+    description: ""
+    xpath: "id('checkdatatable')/TBODY[1]/TR[1]/TD[1]"
+    content: "Check number:"
+  element3: 
+    description: ""
+    xpath: "id('checkdatatable')/TBODY[1]/TR[3]/TD[1]"
+    content: "Check amount:"
+  element4: 
+    description: ""
+    xpath: "id('checkdatatable')/TBODY[1]/TR[5]/TD[1]"
+    content: "Check date:"
+  element5: 
+    description: ""
+    xpath: "id('EFTERAregForm')//p[@class='copyrights copyright__text']/span"
+    content: "Optum Pay solutions are made possible by Optum Financial, Inc. and its subsidiary Optum Bank, Inc., Member FDIC"
+  element6: 
+    description: ""
+    xpath: "//a[@id='submitButton']"
+    content: "SUBMIT"
+  element7: 
+    description: ""
+    xpath: "//a[@id='dontHaveInfo']"
+    content: "I DON'T HAVE THIS INFO NOW"
